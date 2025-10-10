@@ -4,6 +4,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap') layer(init);
 
+@layer init {
+    :root {
+        color-scheme: light dark;
+        --header-bg-color: light-dark(#3B3E40, #3b3e40);
+        --header-text-color: light-dark(#FFFFFF, #FFFFFF);
+        --primary-color: light-dark(#66D4D4, #2b5a5a);
+        --secondary-color: light-dark(#FFFFFF, #000000);
+        --text-color: light-dark(#000000, #FFFFFF);
+        --bg-color: light-dark(#ffffff, #000000);
+
+    }
+    html {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 100%;
+        color: var(--text-color);
+    }
+}
+
 @layer design {
     :root {
         color-scheme: light dark;
@@ -11,8 +29,8 @@
         --header-text-color: light-dark(#FFFFFF, #FFFFFF);
         --primary-color: light-dark(#66D4D4, #2b5a5a);
         --secondary-color: #FFFFFF;
-        --text-color: light-dark(#000000, #FFFFFF);
-        --bg-color: light-dark(#ffffff, #000000);
+        --text-color: light-dark(#ffffff, #000000);
+        --bg-color: light-dark(#000000, #ffffff);
 
     }
     html {
@@ -24,6 +42,12 @@
     body {
         background-color: var(--bg-color);
     }
+
+    h1 {
+        font-size: 4rem;
+        font-weight: extra-bold;
+    }
+
     .header {
         background-image: url("../images/header-2560w.webp");
         background-size: cover;
@@ -31,12 +55,43 @@
         background-color: var(--header-bg-color);
         color: var(--header-text-color);
         line-height: 1.5;
+        padding: 1em;
+    }
+    
+    .img-fluid {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .img-block {
+        margin: 0;
+    }
+
+    .img-block__caption {
+        text-align: center;
+        
     }
     .header__nav {
         text-align: center;
     }
     .header__link {
+        
+    }
+
+    .header__intro {
+        margin-top: 10vh;
+    }
+
+    .button {
         display: inline-block;
-        padding-top: 1em;
+        border-radius: 0.5rem;
+        padding: 0.75em 2em;
+        text-decoration: none;
+    }
+
+    .button--light {
+        background-color: var(--secondary-color);
+        color: var(--text-color);
     }
 }
